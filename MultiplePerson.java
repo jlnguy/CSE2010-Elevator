@@ -28,7 +28,6 @@ public class MultiplePersonElevator extends Elevator{
 	
 	// need to check on each floor if here is a request on that floor that has already occurred
 	// and if the capacity can wield another passenger
-	
 	// might need an array to store the curent passenger objects on the elevator
 	
 	public ArrayList<PassengerReleased> move() {
