@@ -1,7 +1,3 @@
-# CSE2010-Elevator
-
-// Copy pasted from Canvas
-
 package project;
 
 import java.sql.Time;
@@ -30,7 +26,9 @@ public abstract class Elevator {
 	
 	protected boolean verbose = false;
 	
-	protected Queue<PassengerRequest> servingQueue;
+	protected ArrayList<Queue<PassengerRequest>> servingQueueUp;
+	protected ArrayList<Queue<PassengerRequest>> servingQueueDown;
+	protected ArrayList<PassengerRequest> riders;
 	
 	/**
 	 * Constructor to initialize Elevator object
@@ -55,7 +53,8 @@ public abstract class Elevator {
 	 * by calling remove() function.
 	 * @param requests Queue of requests
 	 */
-	abstract void initialize(Queue<PassengerRequest> requests); 
+	abstract void initialize(ArrayList<Queue<PassengerRequest>> requestsUp, 
+									ArrayList<Queue<PassengerRequest>> requestsDown); 
 	
 	/** Move elevator from one floor to another. Note that if no passenger 
 	 * left returning Arraylist should have 0 elements (it shouldn't be null), 
