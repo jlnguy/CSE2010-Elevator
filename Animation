@@ -1,0 +1,91 @@
+package project;
+
+/*
+   Font font = new Font("Arial", Font.BOLD, 60);
+   StdDraw.setFont(font);
+   StdDraw.text(0.5, 0.5, "Hello, World");
+ */
+
+public class Animation {
+
+    public void createInterface (int totalFloor, int weightCapacity, int time) {
+        // Set canvas size based on total floor size.
+        // Draw the elevator shaft
+        // Draw the elevator itself
+        // Next to elevator shaft, have #s that say how many people are waiting on each floor.
+        // Create a side bar for Number of People on Elevator
+        // Side bar for Current Weight, Max Weight, and Time.
+        int elevatorHeight = 50 * totalFloor;
+        int elevatorWidth = 160;
+        int givenHeights = 120;
+        int givenWidth = 175;
+        int marginsByThree = 30;
+        int margins = 10;
+        int timeHeight = 30;
+
+        int totalWidth = elevatorWidth + givenWidth + margins;
+        int totalHeight = 0;
+
+        if (givenHeights > elevatorHeight) {
+            totalHeight = givenHeights + marginsByThree + timeHeight;
+            elevatorHeight = givenHeights;
+        } else {
+            totalHeight = elevatorHeight + marginsByThree + timeHeight;
+            elevatorHeight = givenHeights;
+        }
+
+
+        StdDraw.setCanvasSize(totalWidth, totalHeight);
+        //StdDraw.setXscale(0, totalWidth);
+        //StdDraw.setYscale(0, totalHeight);
+
+        StdDraw.setPenRadius(0.001);
+        StdDraw.setPenColor(StdDraw.BLACK);
+
+        StdDraw.text(0.15, 0.91, "Floor");
+        StdDraw.text(0.45, 0.91, "Passengers");
+        StdDraw.line(elevatorHeight, elevatorWidth, 10, 10);
+        StdDraw.line(0.1, 0.1, 0.55, 0.1);
+        StdDraw.line(0.1, 0.1, 0.1, 0.9);
+        StdDraw.line(0.1, 0.9, 0.55, 0.9);
+        StdDraw.line(0.55, 0.1, 0.55, 0.9);
+
+        StdDraw.line(0.2, 0.1, 0.2, 0.9);
+        StdDraw.line(0.33, 0.1, 0.33, 0.9);
+
+        double meas = (0.9 - 0.1) / totalFloor;
+
+        for (int i = 1; i <= totalFloor; i++) {
+            String floor = i + "";
+            StdDraw.line(0.1, (meas * i) + 0.1, 0.55, (meas * i) + 0.1);
+            StdDraw.text(0.15, (meas * i) + 0.05, floor);
+            // Check the text for the occasion when there is < 10
+        }
+
+/*
+        StdDraw.rectangle((elevatorWidth / 2) + 10, (elevatorHeight / 2) + 10,
+            elevatorWidth / 2, elevatorHeight / 2);
+        StdDraw.line(10, 10, totalHeight - 20, 10);
+        StdDraw.line(10, 10, 10, elevatorWidth);
+
+        StdDraw.line(50, 10, 50, elevatorHeight + 10);
+        StdDraw.line(130, 10, 130, elevatorHeight + 10);
+
+        StdDraw.line(180, 40, 350, 40);
+        StdDraw.line(180, 80, 350, 80);
+        StdDraw.line(180, 120, 350, 120);
+
+        StdDraw.line(270, 60, 310, 60);
+        StdDraw.line(270, 100, 310, 100);
+        StdDraw.line(270, 140, 310, 140);*/
+
+        
+
+    }
+
+    public void createElevator (int floor, int capacity, long time) {
+
+    }
+
+
+}
